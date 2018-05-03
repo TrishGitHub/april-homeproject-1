@@ -1,5 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Merriweather', sans-serif;
+  line-height: 1.5;
+  letter-spacing: .02em;
+  background: #f1f1f1;
 }
