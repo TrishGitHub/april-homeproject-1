@@ -1,3 +1,16 @@
 .content {
     padding: 30px;
 }
+
+.btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: block;
+    padding: 1em;
+    border-radius: 8px;
+    background: #9D4E4E;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
