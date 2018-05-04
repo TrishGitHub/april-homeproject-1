@@ -15,6 +15,7 @@ class Login extends PureComponent {
 	onKeyDownHandle = e => {
 		if (e.keyCode === 13) {
 			this.props.authorize(this.state.token);
+			this.props.history.push('/');
 		}
 	};
 
