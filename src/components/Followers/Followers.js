@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
-import { getFollowers, getFetching } from "../../ducks/followers";
+import { getData, getIsFetching } from "../../ducks/followers";
 import { fetchFollowersRequest } from "../../actions/followers";
 import Spinner from 'react-svg-spinner';
 import Follower from "../Follower";
@@ -40,8 +40,8 @@ class Followers extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-	followers: getFollowers(state),
-	fetching: getFetching(state),
+	followers: getData(state),
+	fetching: getIsFetching(state),
 });
 
 const mapDispatchToProps = {

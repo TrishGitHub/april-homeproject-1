@@ -32,10 +32,10 @@ export default handleActions(
 	}
 );
 
-export const getData = state => state.user.data;
-export const getError = state => state.user.error;
-export const getIsFetched = state => state.user.isFetched;
-export const getIsFetching = state => state.user.isFetching;
+export const getUserData = state => state.users.data;
+export const getError = state => state.users.error;
+export const getIsFetched = state => state.users.isFetched;
+export const getIsFetching = state => state.users.isFetching;
 
 
 

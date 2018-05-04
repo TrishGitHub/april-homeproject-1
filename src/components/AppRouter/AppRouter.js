@@ -30,14 +30,14 @@ class AppRouter extends PureComponent {
 
 				<Switch>
 					<Route path="/login"
-					       exact component={ Login }/>a
+					       exact component={ Login }/>
 					<PrivateRoute
 						path="/user/me"
 						component={ UserPage }/>
 					<PrivateRoute path="/user/:name"
 					              component={ UserPage }/>
 					{ !isAuthorized && <Route path="/login" component={ Login } />}
-					<Redirect to="/login" />
+					<Redirect to="/user/me" />
 				</Switch>
 			</div>
 		);
