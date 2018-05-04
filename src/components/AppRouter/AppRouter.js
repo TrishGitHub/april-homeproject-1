@@ -8,27 +8,16 @@ import UserPage from '../UserPage';
 
 import { getIsAuthorized } from "../../ducks/auth";
 import { getNetworkErrors, getErrorMessage } from "../../ducks/network";
-import { logout } from "../../actions/auth";
 
 import './AppRouter.css';
 
 class AppRouter extends PureComponent {
-
-	logoutHandle = () => {
-		this.props.logout();
-	};
 
 	render() {
 		const { error, message, isAuthorized } = this.props;
 
 		return (
 			<div className="content">
-				{isAuthorized && (
-					<button onClick={ this.logoutHandle } className="btn">
-						Выйти
-					</button>
-				)}
-
 				{error && <div className="error">{ message }</div>}
 
 				<Switch>
@@ -53,10 +42,6 @@ const mapStateToProps = state => ({
 	isAuthorized: getIsAuthorized(state),
 });
 
-const mapDispatchToProps = {
-	logout,
-};
-
 export default withRouter(
-	connect(mapStateToProps, mapDispatchToProps)(AppRouter)
+	connect(mapStateToProps, null)(AppRouter)
 );
