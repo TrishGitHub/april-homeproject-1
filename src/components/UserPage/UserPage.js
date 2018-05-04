@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
+import './UserPage.css';
+
 class UserPage extends PureComponent {
 
 	render() {
