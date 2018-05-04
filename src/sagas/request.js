@@ -4,9 +4,9 @@ import { clearNetworkErrors, networkError } from "../actions/network";
 import { logout } from "../actions/auth";
 import { getNetworkErrors } from "../ducks/network";
 
-export default function* requestFlow(fn, args) {
+export default function* requestFlow(func, arg) {
 	try {
-		const response = yield call(fn, args);
+		const response = yield call(func, arg);
 		if (yield select(getNetworkErrors)) yield put(clearNetworkErrors());
 		return response;
 	} catch (error) {
@@ -15,3 +15,5 @@ export default function* requestFlow(fn, args) {
 		throw error;
 	}
 }
+
+

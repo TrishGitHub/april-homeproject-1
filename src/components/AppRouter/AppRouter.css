@@ -14,3 +14,11 @@
     color: white;
     cursor: pointer;
 }
+
+.error {
+    margin-bottom: 30px;
+    color: #9D4E4E;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
