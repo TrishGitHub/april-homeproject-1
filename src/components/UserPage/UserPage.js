@@ -23,33 +23,31 @@ class UserPage extends PureComponent {
 	render() {
 		const { data, fetching } = this.props;
 		return (
-			<div className="user-container">
+			<React.Fragment>
 				{fetching ? ( <Spinner size="64px" color="fuchsia" gap={5} /> ) : (
-					<div className="user-wrapper">
+					<React.Fragment>
 						{!data ? ( <div className="error">Пользователя не существует</div> ) : (
-							<div className="user-page">
+							<div className="user-item">
 								<div className="user">
 									<div className="user-img">
 										<img src={ data.avatar_url } alt="" />
 									</div>
 									<div className="user-desc">
 										<div className="user-name">{ data.login }</div>
-										<div className="user-foll">
+										<div className="user-info">
 											Followers: { data.followers }
 										</div>
-										<div className="user__props user__repos">
+										<div className="user-info">
 											Public repos: { data.public_repos }
 										</div>
 									</div>
 								</div>
-								<div className="">
-									<Followers user={ data.login } />
-								</div>
+								<Followers user={ data.login } />
 							</div>
 						)}
-					</div>
+					</React.Fragment>
 				)}
-			</div>
+			</React.Fragment>
 		);
 	}
 }

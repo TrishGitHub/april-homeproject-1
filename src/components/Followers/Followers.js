@@ -19,7 +19,7 @@ class Followers extends PureComponent {
 		return (
 			<div className="followers-list">
 				{ fetching ? ( <Spinner size="64px" color="fuchsia" gap={5} /> ) : (
-					<div>
+					<React.Fragment>
 						{!followers || followers.length === 0 ? (
 							<div>Подписчиков нет</div>
 						) : (
@@ -32,7 +32,7 @@ class Followers extends PureComponent {
 								/>
 							))
 						)}
-					</div>
+					</React.Fragment>
 				)}
 			</div>
 		);
