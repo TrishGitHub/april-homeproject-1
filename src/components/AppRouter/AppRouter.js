@@ -7,6 +7,7 @@ import Login from '../Login';
 import UserPage from '../UserPage';
 
 import { getIsAuthorized } from "../../ducks/auth";
+import { getNetworkErrors, getErrorMessage } from "../../ducks/network";
 import { logout } from "../../actions/auth";
 
 import './AppRouter.css';
@@ -18,7 +19,7 @@ class AppRouter extends PureComponent {
 	};
 
 	render() {
-		const { isAuthorized } = this.props;
+		const { error, message, isAuthorized } = this.props;
 
 		return (
 			<div className="content">
@@ -27,6 +28,8 @@ class AppRouter extends PureComponent {
 						Выйти
 					</button>
 				)}
+
+				{error && <div className="error">{ message }</div>}
 
 				<Switch>
 					<Route path="/login"
@@ -45,6 +48,8 @@ class AppRouter extends PureComponent {
 }
 
 const mapStateToProps = state => ({
+	error: getNetworkErrors(state),
+	message: getErrorMessage(state),
 	isAuthorized: getIsAuthorized(state),
 });
 
