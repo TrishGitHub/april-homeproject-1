@@ -1,0 +1,24 @@
+.content {
+    padding: 80px 50px 50px;
+}
+
+.btn {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    display: block;
+    padding: 1em;
+    border-radius: 8px;
+    background: #9D4E4E;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+
+.error {
+    margin-bottom: 30px;
+    color: #9D4E4E;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}

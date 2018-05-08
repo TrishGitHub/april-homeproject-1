@@ -1,0 +1,4 @@
+.followers-list {
+    flex-wrap: wrap;
+    justify-content: center;
+}
